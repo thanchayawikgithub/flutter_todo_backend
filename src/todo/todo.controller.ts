@@ -18,9 +18,13 @@ export class TodoController {
   getTodos(): Promise<Todo[]> {
     return this.todoService.getTodos();
   }
-
+  @Get(':id')
+  getTodo(@Param('id') id: number): Promise<Todo> {
+    return this.todoService.getTodo(id);
+  }
   @Post()
   addTodo(@Body() todo: Todo): Promise<Todo> {
+    console.log(todo);
     return this.todoService.addTodo(todo);
   }
 

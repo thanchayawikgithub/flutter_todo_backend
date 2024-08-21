@@ -33,6 +33,10 @@ export class TodoService {
     return this.todoRepository.findOneBy({ id: id });
   }
 
+  async getTodo(id: number): Promise<Todo> {
+    return this.todoRepository.findOneBy({ id: id });
+  }
+
   async getTodos(): Promise<Todo[]> {
     return this.todoRepository.find();
   }
